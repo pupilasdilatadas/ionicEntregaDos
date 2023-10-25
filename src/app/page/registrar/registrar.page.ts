@@ -11,6 +11,7 @@ export class RegistrarPage implements OnInit {
 
   usuario:string = '';
   contrasena:string = '';
+  rut:string = '';
 
   constructor(
               private storage:StorageService,
@@ -29,10 +30,15 @@ export class RegistrarPage implements OnInit {
       this.helper.showAlert("Debe ingresar una contraseña","Error");
       return;
     }
+    if (this.rut == '') {
+      this.helper.showAlert("Debe ingresar su rut!","Error");
+      return;
+    }
 
     var usuario = [{
       nombreUsuario:this.usuario,
-      contrasena:this.contrasena
+      contrasena:this.contrasena,
+      rut:this.rut
     }];
 
     this.storage.guargarUsuario(usuario);

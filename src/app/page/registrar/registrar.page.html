@@ -5,8 +5,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-input [(ngModel)]="usuario" label="Usuario: "></ion-input>
+  <ion-input [(ngModel)]="usuario" label="Usuario:"></ion-input>
   <ion-input [(ngModel)]="contrasena" type="password" label="contraseña: "></ion-input>
+  <ion-input [(ngModel)]="rut" label="Rut: "></ion-input>
+
 
   <ion-button (click)="registro()" expand = "block" fill = "outline" color = "danger">
     Registrar Usuario
