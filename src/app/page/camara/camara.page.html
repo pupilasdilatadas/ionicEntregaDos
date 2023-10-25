@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cámara
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="takePhoto()">Tomar Foto</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let imagen of imagenes">
+      <ion-thumbnail>
+        <img [src]="imagen.src" alt="Imagen">
+      </ion-thumbnail>
+      <ion-label>
+        {{ imagen.fname }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

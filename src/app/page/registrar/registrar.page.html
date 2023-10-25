@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-input [(ngModel)]="usuario" label="Usuario: "></ion-input>
+  <ion-input [(ngModel)]="contrasena" type="password" label="contraseña: "></ion-input>
+
+  <ion-button (click)="registro()" expand = "block" fill = "outline" color = "danger">
+    Registrar Usuario
+  </ion-button>
+  <ion-button expand = "block" fill = "outline" color = "danger" routerLink="/login">
+    Volver a Login
+  </ion-button>
+
+</ion-content>

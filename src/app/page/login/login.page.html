@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-input [(ngModel)]="nombreUsuario" placeholder="Nombre de Usuario"></ion-input>
+  <ion-input [(ngModel)]="contrasena" type="password" placeholder="Contraseña"></ion-input>
+
+  <ion-button (click)="iniciarSesion()" expand = "block" fill = "outline" color = "danger" >
+    Login
+  </ion-button>
+
+  <ion-button expand = "block" fill = "outline" color = "danger" routerLink="/registrar">
+    Registrate!
+  </ion-button>
+
+  <ion-button expand = "block" fill = "outline" color = "danger" routerLink="/geo">
+    GEOGEOGEO!
+  </ion-button>
+
+</ion-content>
