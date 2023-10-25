@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Comuna } from 'src/app/models/comuna';
+import { Region } from 'src/app/models/region';
 import { HelperService } from 'src/app/service/helper.service';
+import { LocationService } from 'src/app/service/location.service';
 import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
@@ -13,13 +16,37 @@ export class RegistrarPage implements OnInit {
   contrasena:string = '';
   rut:string = '';
 
+  regiones:Region[]=[];
+  comunas:Comuna[]=[];
+
+  regionSel:number = 0;
+  comunaSel:number = 0;
+  seleccionComuna:boolean = true;
+
   constructor(
               private storage:StorageService,
-              private helper:HelperService
+              private helper:HelperService,
+              private locationService:LocationService
               ) { }
 
   ngOnInit() {
+    this.cargarRegion();
   }
+
+  //REGIÓN Y COMUNA FUNCIONES
+
+  async cargarRegion(){
+    const req = await this.locationService.getRegion();
+    this.regiones = req.data;
+  }
+
+  async cargarComuna(){
+    this.seleccionComuna = false;
+    const req = await this.locationService.getComuna(this.regionSel);
+    this.comunas = req.data;
+  }
+
+  //REGISTRO DE USUARIO FUNCIÓN
 
   registro(){
     if (this.usuario == '') {
