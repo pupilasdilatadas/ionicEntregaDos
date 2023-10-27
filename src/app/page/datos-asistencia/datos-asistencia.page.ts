@@ -62,7 +62,7 @@ export class DatosAsistenciaPage implements OnInit {
         );
         if (image.webPath) {
           var blob = (await fetch(image.webPath)).blob();
-          this.imagenes.unshift({fname:'foto.'+ image.format,src:image.webPath,file:blob});
+          this.imagenes=[{fname:'foto.'+ image.format,src:image.webPath,file:blob}];
         }
         console.log("IMAGENES GUARDADAS ===> ", this.imagenes);
     // }

@@ -36,7 +36,7 @@
   <ion-button (click)="takePhoto()" expand = "block" color = "light" >
     Selfie
   </ion-button>
-  <ion-card>
-    <ion-img [src]="imagenes[0]"></ion-img>
+  <ion-card *ngFor="let i of imagenes">
+    <ion-img [src]="i.src"></ion-img>
   </ion-card>
 </ion-content>
