@@ -50,4 +50,16 @@ export class StorageService {
     }
   }
 
+
+  async recuperarContrasena(rut: string): Promise<string | null> {
+    const usuarios = await this.obtenerUsuario();
+    
+    const usuario = usuarios.find(user => user.rut === rut);
+    
+    if (usuario) {
+      return usuario.contrasena;
+    } else {
+      return null; // El usuario no fue encontrado
+    }
+  }
 }

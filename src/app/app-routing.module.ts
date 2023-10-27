@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'geo',
     loadChildren: () => import('./page/geo/geo.module').then( m => m.GeoPageModule)
   },
+  {
+    path: 'recuperar',
+    loadChildren: () => import('./page/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },
 ];
 
 @NgModule({

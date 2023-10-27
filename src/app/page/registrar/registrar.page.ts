@@ -70,6 +70,13 @@ export class RegistrarPage implements OnInit {
       comuna: this.comunaSel
     }];
 
+    this.usuario = '';
+    this.contrasena = '';
+    this.rut = '';
+    this.regionSel = 0;
+    this.comunaSel = 0;
+    this.seleccionComuna = true; 
+
     this.storage.guargarUsuario(usuario);
     this.helper.showAlert("Usuario registrado correctamente.","Información");
     

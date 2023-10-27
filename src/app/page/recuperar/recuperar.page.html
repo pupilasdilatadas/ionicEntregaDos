@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>¡RECUPERAR CONTRASEÑA!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="formulario">
+    <ion-item>
+      <ion-label position="stacked">Ingresa tu RUT!</ion-label>
+      <ion-input [(ngModel)]="rut" type="text"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" color="light" (click)="recuperarContrasena()">Recuperar Contraseña</ion-button>
+    <ion-button expand="full" color="light" routerLink="/login">Volver a Login</ion-button>
+
+
+  </div>
+</ion-content>

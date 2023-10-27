@@ -1,30 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registrar</ion-title>
+    <ion-title>¡REGISTRO!</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-input [(ngModel)]="usuario" label="Usuario:"></ion-input>
-  <ion-input [(ngModel)]="contrasena" type="password" label="contraseña: "></ion-input>
-  <ion-input [(ngModel)]="rut" label="Rut: "></ion-input>
+  <div class="formulario">
+    <ion-input [(ngModel)]="usuario" placeholder="Usuario:"></ion-input>
+    <ion-input [(ngModel)]="contrasena" type="password" placeholder="Contraseña:"></ion-input>
+    <ion-input [(ngModel)]="rut" placeholder="Rut:"></ion-input>
 
-  <ion-item>
-    <ion-select (ionChange)="cargarComuna()" [(ngModel)]="regionSel"  label="Region" placeholder="Seleccione">
-      <ion-select-option *ngFor="let i of regiones" [value]="i.id">{{i.nombre}}</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-select [disabled]="seleccionComuna" [(ngModel)]="comunaSel"  label="Comuna" placeholder="Seleccione">
-      <ion-select-option *ngFor="let i of comunas" [value]="i.id">{{i.nombre}}</ion-select-option>
-    </ion-select>
-  </ion-item>
+    <ion-item>
+      <ion-select (ionChange)="cargarComuna()" [(ngModel)]="regionSel" label="Región" placeholder="Seleccione">
+        <ion-select-option *ngFor="let i of regiones" [value]="i.id">{{i.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select [disabled]="seleccionComuna" [(ngModel)]="comunaSel" label="Comuna" placeholder="Seleccione">
+        <ion-select-option *ngFor="let i of comunas" [value]="i.id">{{i.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-  <ion-button (click)="registro()" expand = "block" fill = "outline" color = "danger">
-    Registrar Usuario
-  </ion-button>
-  <ion-button expand = "block" fill = "outline" color = "danger" routerLink="/login">
-    Volver a Login
-  </ion-button>
-
+    <ion-button (click)="registro()" expand="full" color="light">Registrar Usuario</ion-button>
+    <ion-button expand="full" color="light" routerLink="/login">Volver a Login</ion-button>
+  </div>
 </ion-content>
+

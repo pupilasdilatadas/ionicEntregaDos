@@ -47,6 +47,8 @@ export class LoginPage implements OnInit {
         elemento.contrasena === usuarioIngresado[0].contrasena
       ) {
         console.log("Iniciaste seisón!");
+        this.nombreUsuario = '';
+        this.contrasena = '';      
         this.router.navigate(['/menu']);
         return;
       }
