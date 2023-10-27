@@ -10,6 +10,9 @@ import { GoogleMap } from '@capacitor/google-maps';
 
 export class GeoPage implements OnInit {
 
+  latitud: number= 0;;
+  longitud: number= 0;;
+
   constructor() { }
 
   ngOnInit() {
@@ -18,10 +21,10 @@ export class GeoPage implements OnInit {
 
   async obtenerUbicacionActual() {
     const coordenadas = await Geolocation.getCurrentPosition();
-    const latitud = coordenadas.coords.latitude;
-    const longitud = coordenadas.coords.longitude;
+    this.latitud = coordenadas.coords.latitude;
+    this.longitud = coordenadas.coords.longitude;
   
-    console.log(`Latitud: ${latitud}, Longitud: ${longitud}`);
+    console.log(`Latitud: ${this.latitud}, Longitud: ${this.longitud}`);
   }
  
 }

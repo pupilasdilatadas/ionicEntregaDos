@@ -1,14 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Geo y Mapa</ion-title>
+    <ion-title>Geo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
 
-  <ion-button expand = "block" fill = "outline" color = "danger" >
-    GEO
-  </ion-button>
+  <ion-content>
+    <div>
+      <p class="titulo">Latitud!: {{ latitud }}</p>
+      <p class="titulo">Longitud!: {{ longitud }}</p>
+      <ion-button expand = "block" fill = "outline" color = "danger" routerLink="/login">
+        Volver a Login
+      </ion-button>
+      <img src="assets/img/Regirock.png" alt="geo" />
+    </div>
+   
+  </ion-content>
 
 </ion-content>

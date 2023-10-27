@@ -65,7 +65,9 @@ export class RegistrarPage implements OnInit {
     var usuario = [{
       nombreUsuario:this.usuario,
       contrasena:this.contrasena,
-      rut:this.rut
+      rut:this.rut,
+      region: this.regionSel,
+      comuna: this.comunaSel
     }];
 
     this.storage.guargarUsuario(usuario);

@@ -23,6 +23,16 @@ export class LoginPage implements OnInit {
   }
 
   async iniciarSesion() {
+
+    if (this.nombreUsuario == '') {
+      this.helper.showAlert("Debe ingresar un usuario","Error");
+      return;
+    }
+    if (this.contrasena == '') {
+      this.helper.showAlert("Debe ingresar una contraseña","Error");
+      return;
+    }
+
     const usuarioIngresado = [
       { nombreUsuario: this.nombreUsuario, contrasena: this.contrasena }
     ];
