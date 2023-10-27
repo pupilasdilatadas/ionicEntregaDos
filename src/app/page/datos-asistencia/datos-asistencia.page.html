@@ -36,6 +36,9 @@
   <ion-button (click)="takePhoto()" expand = "block" color = "light" >
     Selfie
   </ion-button>
+  <ion-button expand = "block" color = "light" routerLink="/login" >
+    Salir
+  </ion-button>
   <ion-card *ngFor="let i of imagenes">
     <ion-img [src]="i.src"></ion-img>
   </ion-card>
