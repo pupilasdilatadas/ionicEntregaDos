@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'recuperar',
     loadChildren: () => import('./page/recuperar/recuperar.module').then( m => m.RecuperarPageModule)
+  },  {
+    path: 'datos-asistencia',
+    loadChildren: () => import('./page/datos-asistencia/datos-asistencia.module').then( m => m.DatosAsistenciaPageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +14,8 @@ import { MenuPage } from './menu.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuPageRoutingModule
+    MenuPageRoutingModule,
+    ZXingScannerModule
   ],
   declarations: [MenuPage]
 })

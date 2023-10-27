@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   contrasena:string = "";
 
   constructor(private router:Router,
-    private helper:HelperService, 
+    private helper:HelperService,
     private storage:StorageService) { }
 
   ngOnInit() {
@@ -36,29 +36,29 @@ export class LoginPage implements OnInit {
     const usuarioIngresado = [
       { nombreUsuario: this.nombreUsuario, contrasena: this.contrasena }
     ];
-      
+
     const data = await this.storage.obtenerUsuario();
 
     for (let i = 0; i < data.length; i++) {
       const elemento = data[i];
-  
       if (
         elemento.nombreUsuario === usuarioIngresado[0].nombreUsuario &&
         elemento.contrasena === usuarioIngresado[0].contrasena
       ) {
         console.log("Iniciaste seisón!");
+        this.storage.guardarUsuarioActivo(elemento);
         this.nombreUsuario = '';
-        this.contrasena = '';      
+        this.contrasena = '';
         this.router.navigate(['/menu']);
         return;
       }
     }
-  
+
     console.log("No hay usuario1");
   }
-  
-  
 
-  
-  
+
+
+
+
 }
