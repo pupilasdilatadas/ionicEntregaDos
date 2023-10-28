@@ -62,12 +62,18 @@ export class RegistrarPage implements OnInit {
       return;
     }
 
+    const regionSeleccionada = this.regiones.find(region => region.id === this.regionSel);
+    const nombreRegion = regionSeleccionada ? regionSeleccionada.nombre : '';
+
+    const comunaSeleccionada = this.comunas.find(comuna => comuna.id === this.comunaSel);
+    const nombreComuna = comunaSeleccionada ? comunaSeleccionada.nombre : '';
+
     var usuario = [{
       nombreUsuario:this.usuario,
       contrasena:this.contrasena,
       rut:this.rut,
-      region: this.regionSel,
-      comuna: this.comunaSel
+      region: nombreRegion,
+      comuna: nombreComuna
     }];
 
     this.usuario = '';
