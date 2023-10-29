@@ -61,6 +61,14 @@ export class RegistrarPage implements OnInit {
       this.helper.showAlert("Debe ingresar su rut!","Error");
       return;
     }
+    if (this.regionSel == 0) {
+      this.helper.showAlert("Debe ingresar su región!","Error");
+      return;
+    }
+    if (this.comunaSel == 0) {
+      this.helper.showAlert("Debe ingresar su comuna!","Error");
+      return;
+    }
 
     const regionSeleccionada = this.regiones.find(region => region.id === this.regionSel);
     const nombreRegion = regionSeleccionada ? regionSeleccionada.nombre : '';
