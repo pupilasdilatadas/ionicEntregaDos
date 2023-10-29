@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/service/storage.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
-
+import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-datos-asistencia',
   templateUrl: './datos-asistencia.page.html',
@@ -20,7 +20,7 @@ export class DatosAsistenciaPage implements OnInit {
   sala: string = '';
   imagenes:any[]=[];
 
-  constructor(private storage:StorageService) { }
+  constructor(private storage:StorageService, private authService:AuthService) { }
 
   ngOnInit() {
     defineCustomElements(window);
@@ -66,6 +66,10 @@ export class DatosAsistenciaPage implements OnInit {
         }
         console.log("IMAGENES GUARDADAS ===> ", this.imagenes);
     // }
+  }
+
+  salir(){
+    this.authService.logout()
   }
 
 }

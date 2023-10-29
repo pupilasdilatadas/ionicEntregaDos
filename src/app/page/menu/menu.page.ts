@@ -3,6 +3,7 @@ import { BarcodeFormat } from '@zxing/library';
 import { StorageService } from 'src/app/service/storage.service';
 import { Geolocation } from '@capacitor/geolocation';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class MenuPage implements OnInit {
 
-  constructor(private storage:StorageService,private router:Router) { }
+  constructor(private storage:StorageService,private router:Router,private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -55,6 +56,10 @@ export class MenuPage implements OnInit {
       longitudAlumno: longitud
     }];
     this.storage.guardarAsistencia(asistencia);
+  }
+
+  salir(){
+    this.authService.logout();
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HelperService } from 'src/app/service/helper.service';
 import { StorageService } from 'src/app/service/storage.service';
-
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -17,7 +17,8 @@ export class LoginPage implements OnInit {
 
   constructor(private router:Router,
     private helper:HelperService,
-    private storage:StorageService) { }
+    private storage:StorageService,
+    private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -49,6 +50,7 @@ export class LoginPage implements OnInit {
         this.storage.guardarUsuarioActivo(elemento);
         this.nombreUsuario = '';
         this.contrasena = '';
+        this.authService.login(true);
         this.router.navigate(['/menu']);
         return;
       }

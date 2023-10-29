@@ -6,7 +6,7 @@
 
 <ion-content>
   <zxing-scanner (scanSuccess)="handleQrCodeResult($event)"></zxing-scanner>
-  <ion-button expand = "block" fill = "outline" color = "danger" routerLink="/login">
+  <ion-button (click)="salir()" expand = "block" fill = "outline" color = "danger" routerLink="/login">
     Volver a Login
   </ion-button>
 </ion-content>

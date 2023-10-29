@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CamaraPage } from './camara.page';
+import { NotfoundPage } from './notfound.page';
 
-describe('CamaraPage', () => {
-  let component: CamaraPage;
-  let fixture: ComponentFixture<CamaraPage>;
+describe('NotfoundPage', () => {
+  let component: NotfoundPage;
+  let fixture: ComponentFixture<NotfoundPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(CamaraPage);
+    fixture = TestBed.createComponent(NotfoundPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
