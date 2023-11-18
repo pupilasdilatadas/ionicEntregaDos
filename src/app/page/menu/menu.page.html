@@ -1,14 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>MENU</ion-title>
+    <ion-title>¡MENU!</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <zxing-scanner (scanSuccess)="handleQrCodeResult($event)"></zxing-scanner>
-  <ion-button (click)="salir()" expand = "block" fill = "outline" color = "danger" routerLink="/login">
-    Volver a Login
-  </ion-button>
+<ion-content class="formulario">
+  <div class = "formulario">
+    <zxing-scanner (scanSuccess)="handleQrCodeResult($event)"></zxing-scanner>
+    <ion-button (click)="salir()" expand="block" routerLink="/login">
+      ¡VOLVER AL LOGIN!
+    </ion-button>
+  </div>
 </ion-content>
-
-

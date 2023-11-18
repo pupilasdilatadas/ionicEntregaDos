@@ -4,6 +4,7 @@ import { Region } from 'src/app/models/region';
 import { HelperService } from 'src/app/service/helper.service';
 import { LocationService } from 'src/app/service/location.service';
 import { StorageService } from 'src/app/service/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar',
@@ -26,7 +27,8 @@ export class RegistrarPage implements OnInit {
   constructor(
               private storage:StorageService,
               private helper:HelperService,
-              private locationService:LocationService
+              private locationService:LocationService,
+              private router:Router
               ) { }
 
   ngOnInit() {
@@ -92,7 +94,9 @@ export class RegistrarPage implements OnInit {
     this.seleccionComuna = true; 
 
     this.storage.guargarUsuario(usuario);
+    this.router.navigate(['/login']);
     this.helper.showAlert("Usuario registrado correctamente.","Información");
+    
     
   }
 

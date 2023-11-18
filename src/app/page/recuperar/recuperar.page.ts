@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HelperService } from 'src/app/service/helper.service';
 import { StorageService } from 'src/app/service/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recuperar',
@@ -14,7 +15,8 @@ export class RecuperarPage implements OnInit {
 
   constructor(
               private storage:StorageService,
-              private helper:HelperService
+              private helper:HelperService,
+              private router:Router
               ) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class RecuperarPage implements OnInit {
     if (this.contrasenaRecuperada === null) {
       this.helper.showAlert('No se encontró un usuario con ese RUT',"INFORMACIÓN!");
     } else {
+      this.router.navigate(['/login']);
       this.helper.showAlert(`Tu contraseña es: ${this.contrasenaRecuperada}`, 'CONTRASEÑA RECUPERADA!');
       this.rut = '';
     }

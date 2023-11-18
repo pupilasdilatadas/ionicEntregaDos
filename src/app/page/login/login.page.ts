@@ -39,6 +39,7 @@ export class LoginPage implements OnInit {
     ];
 
     const data = await this.storage.obtenerUsuario();
+    let credencialesValidas = false;
 
     for (let i = 0; i < data.length; i++) {
       const elemento = data[i];
@@ -46,6 +47,7 @@ export class LoginPage implements OnInit {
         elemento.nombreUsuario === usuarioIngresado[0].nombreUsuario &&
         elemento.contrasena === usuarioIngresado[0].contrasena
       ) {
+        credencialesValidas = true;
         console.log("Iniciaste seisón!");
         this.storage.guardarUsuarioActivo(elemento);
         this.nombreUsuario = '';
@@ -55,7 +57,10 @@ export class LoginPage implements OnInit {
         return;
       }
     }
-
+    
+    if (!credencialesValidas) {
+      this.helper.showAlert("Credenciales no válidas", "Error");
+    }
     console.log("No hay usuario1");
   }
 

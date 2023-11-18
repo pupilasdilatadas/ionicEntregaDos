@@ -1,10 +1,70 @@
-
 .formulario {
     margin: 20px;
     padding: 10px;
-    background-color: #2c1a1a;
+    background-color: #bfbba3;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-weight: bold;
 }
+  
+.formulario ion-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #370709;
+    color: #bfbba3;
+}
+  
+.formulario ion-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #370709;
+    color: #bfbba3;
+}
+  
+.formulario ion-button {
+    --background: #60262A;
+    --background-hover: #7c3540;
+    --background-activated: #512024;
+    --background-focused: #512024;
+    --color: #bfbba3;
+    font-size: 18px;
+    font-weight: bold;
+    --border-radius: 8px;
+    --border-color: black;
+    --border-style: solid;
+    --border-width: 1px;
+    --box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
+    --ripple-color: #60262A;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}
+  
+.placeholderEnElAire {
+    color: #281214;
+    font-weight: bold;
+}
+  
+.divider {
+    background-color: #60262A;
+  }
 
+ion-content {
+    --background: #281214;
+}
+  
+ion-toolbar {
+    --background: #bfbba3;
+}
+  
+ion-title {
+    color: #281214;
+    font-size: 20px;
+    font-weight: bold;
+}
+  

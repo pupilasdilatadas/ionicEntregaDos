@@ -4,23 +4,29 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-  <div class = formulario>
-    <ion-input [(ngModel)]="nombreUsuario" placeholder="Nombre de Usuario"></ion-input>
-    <ion-input [(ngModel)]="contrasena" type="password" placeholder="Contraseña"></ion-input>
+  <div class="formulario">
+    
+    <div>
+      <span class="placeholderEnElAire">Nombre de Usuario</span>
+      <ion-input [(ngModel)]="nombreUsuario"></ion-input>
+    </div>
 
-    <ion-button (click)="iniciarSesion()" expand = "block" color = "light" >
-      Login
+    <div>
+      <span class="placeholderEnElAire">Contraseña</span>
+      <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+    </div>
+
+    <ion-button (click)="iniciarSesion()" expand="block">
+      ¡INGRESAR!
     </ion-button>
 
-    <ion-button expand = "block" color = "light" routerLink="/registrar">
-      Registrate!
+    <ion-button expand="block" routerLink="/registrar">
+      ¡REGISTRAR!
     </ion-button>
 
-    <ion-button expand = "block" color = "light" routerLink="/recuperar">
-      RECUPERAR!
+    <ion-button expand="block" routerLink="/recuperar">
+      ¡RECUPERAR!
     </ion-button>
-   
   </div>
 </ion-content>

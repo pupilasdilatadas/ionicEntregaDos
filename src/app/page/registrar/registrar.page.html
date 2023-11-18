@@ -6,23 +6,41 @@
 
 <ion-content>
   <div class="formulario">
-    <ion-input [(ngModel)]="usuario" placeholder="Usuario:"></ion-input>
-    <ion-input [(ngModel)]="contrasena" type="password" placeholder="Contraseña:"></ion-input>
-    <ion-input [(ngModel)]="rut" placeholder="Rut:"></ion-input>
+    <div class="input-container">
+      <span class="placeholderEnElAire">Usuario:</span>
+      <ion-input [(ngModel)]="usuario"></ion-input>
+    </div>
 
-    <ion-item>
+    <div class="input-container">
+      <span class="placeholderEnElAire">Contraseña:</span>
+      <ion-input [(ngModel)]="contrasena" type="password"></ion-input>
+    </div>
+
+    <div class="input-container">
+      <span class="placeholderEnElAire">Rut:</span>
+      <ion-input [(ngModel)]="rut"></ion-input>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="input-container">
       <ion-select (ionChange)="cargarComuna()" [(ngModel)]="regionSel" label="Región" placeholder="Seleccione">
         <ion-select-option *ngFor="let i of regiones" [value]="i.id">{{i.nombre}}</ion-select-option>
       </ion-select>
-    </ion-item>
-    <ion-item>
+
       <ion-select [disabled]="seleccionComuna" [(ngModel)]="comunaSel" label="Comuna" placeholder="Seleccione">
         <ion-select-option *ngFor="let i of comunas" [value]="i.id">{{i.nombre}}</ion-select-option>
       </ion-select>
-    </ion-item>
+    </div>
 
-    <ion-button (click)="registro()" expand="full" color="light">Registrar Usuario</ion-button>
-    <ion-button expand="full" color="light" routerLink="/login">Volver a Login</ion-button>
+    <hr class="divider" />
+
+    <ion-button (click)="registro()" expand="block">
+      ¡REGISTRARSE!
+    </ion-button>
+
+    <ion-button expand="block" routerLink="/login">
+      ¡VOLVER AL LOGIN!
+    </ion-button>
   </div>
 </ion-content>
-

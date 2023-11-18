@@ -4,16 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <div class="formulario">
-    <ion-item>
-      <ion-label position="stacked">Ingresa tu RUT!</ion-label>
+
+    <div class="input-container">
+      <span class="placeholderEnElAire">Ingrese su RUT</span>
       <ion-input [(ngModel)]="rut" type="text"></ion-input>
-    </ion-item>
+    </div>
 
-    <ion-button expand="block" color="light" (click)="recuperarContrasena()">Recuperar Contraseña</ion-button>
-    <ion-button expand="full" color="light" routerLink="/login">Volver a Login</ion-button>
+    <ion-button expand="block" (click)="recuperarContrasena()">
+      ¡RECUPERAR!
+    </ion-button>
 
-
+    <ion-button expand="block" routerLink="/login">
+      ¡VOLVER AL LOGIN!
+    </ion-button>
   </div>
 </ion-content>
