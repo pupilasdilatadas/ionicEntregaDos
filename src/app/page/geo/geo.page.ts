@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@capacitor/geolocation';
-import { GoogleMap } from '@capacitor/google-maps';
 
 @Component({
   selector: 'app-geo',
@@ -23,8 +22,8 @@ export class GeoPage implements OnInit {
     const coordenadas = await Geolocation.getCurrentPosition();
     this.latitud = coordenadas.coords.latitude;
     this.longitud = coordenadas.coords.longitude;
-  
+
     console.log(`Latitud: ${this.latitud}, Longitud: ${this.longitud}`);
   }
- 
+
 }
